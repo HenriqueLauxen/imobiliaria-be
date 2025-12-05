@@ -1,0 +1,12 @@
+[build]
+builder = "nixpacks"
+
+[build.nixpacks]
+plan = "maven"
+
+[deploy]
+startCommand = "java -Dserver.port=$PORT -jar target/*.jar"
+healthcheckPath = "/"
+healthcheckTimeout = 300
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
