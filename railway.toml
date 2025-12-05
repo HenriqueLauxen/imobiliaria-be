@@ -5,8 +5,8 @@ builder = "nixpacks"
 plan = "maven"
 
 [deploy]
-startCommand = "java -Xmx512m -Dserver.port=$PORT -jar target/*.jar"
+startCommand = "java -Xmx400m -Xms200m -Dserver.port=$PORT -jar target/*.jar"
 healthcheckPath = "/health"
-healthcheckTimeout = 600
+healthcheckTimeout = 120
 restartPolicyType = "on_failure"
-restartPolicyMaxRetries = 5
+restartPolicyMaxRetries = 3
