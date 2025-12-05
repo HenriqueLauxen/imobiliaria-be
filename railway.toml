@@ -2,8 +2,8 @@
 builder = "nixpacks"
 
 [deploy]
-startCommand = "java -jar -Dserver.port=$PORT target/*.jar"
-healthcheckPath = "/"
+startCommand = "java -Xmx512m -Xms256m -Dserver.port=$PORT -jar target/*.jar"
+healthcheckPath = "/health"
 healthcheckTimeout = 300
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 3
